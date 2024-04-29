@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content1 %}
+
+
+<div class="mt-24 md:mt-14">
+    <div class="container my-auto mx-auto px-4 lg:max-w-5xl">
+        <div class="items-center flex flex-wrap justify-center {{ fl }}">
+            <div class="w-full md:w-7/12 mx-auto mt-6">
+                <div
+                    class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-pr2"
+                    >
+                    <div class="bg-white p-4 text-center ">
+                        <h1 class="max-w-2xl mb-4 text-4xl text-pr2 font-extrabold tracking-tight leading-none md:text-5xl  uppercase ">Login </h1>
+                    </div>
+                    <blockquote class="relative p-8 mb-4 ">
+                        {% include "components/utilities/divider.html" with div_c="text-pr2" div_hs="100px" div_m="99px" div_h="100px" %}
+                        
+                        <form method="post" action="{% url 'login' %}">
+                            {% csrf_token %}
+                            <div class="relative w-full mb-3 mt-8">
+                                {% include "components/utilities/input.html" with name="username" label="Username" type="text" placeholder="Enter Username" %}
+                            </div>
+                            <div class="relative w-full mb-3 mt-8">
+                                {% include "components/utilities/input.html" with name="password" label="Password" type="password" placeholder="*******" %}
+                            </div>
+                            <div class="text-center mt-6">
+                                <button
+                                class="bg-white text-gray-950 active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                                type="submit"
+                                style="transition: all 0.15s ease 0s;"
+                                >
+                                Sign In
+                                </button>
+                            </div>
+                            </div>
+                        </form>
+                    </blockquote>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

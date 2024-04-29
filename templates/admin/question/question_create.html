@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block content1 %}
+
+<div class="mt-24 mb-20 md:mt-14">
+    <div class="container mx-auto px-4 lg:max-w-5xl">
+        <div class="items-center flex flex-wrap justify-center">
+            <div class="w-full md:w-8/12 mx-auto mt-6">
+                <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-pr2">
+                    <div class="bg-white p-4 text-center ">
+                        <h1
+                            class="max-w-2xl mb-4 text-4xl text-pr2 font-extrabold tracking-tight leading-none md:text-5xl  uppercase ">
+                            Create Questions </h1>
+                    </div>
+                    <blockquote class="relative p-8 mb-4 ">
+                        {% include "components/utilities/divider.html" with div_c="text-pr2" div_hs="100px" div_m="99px"  %}
+
+                        <form method="post" action="{% url 'ad_new_question' %}">
+                            {% csrf_token %}
+                            <div class="relative w-full m-4">
+                                {% include "components/utilities/input_d.html" with input=form.name label="Name" label_t=form.name.id_for_label error=form.number.errors %}
+                            </div>
+                            <div class="relative w-full m-4">
+                                {% include "components/utilities/input_d.html" with input=form.number label="Number" label_t=form.number.id_for_label error=form.name.errors %}
+                            </div>
+                            <div class="relative flex w-full m-4">
+                                {% include "components/utilities/input_radio_d.html" with input=form.is_fqa label="It is FAQ" label_t=form.is_fqa.id_for_label error=form.is_fqa.errors %}
+                                {% include "components/utilities/input_radio_d.html" with input=form.is_suggestion label="It is Suggestion" label_t=form.is_suggestion.id_for_label error=form.is_suggestion.errors %}
+                            </div>
+                            <div class="relative w-full m-4">
+                                {% include "components/utilities/input_d.html" with input=form.question label="Question / " label_t=form.question.id_for_label error=form.question.errors %}
+                            </div>
+                            <div class="relative w-full m-4">
+                                {% include "components/utilities/input_d.html" with input=form.answer label="Answer" label_t=form.answer.id_for_label error=form.answer.errors %}
+                            </div>
+                            <div class="text-center mt-6">
+                                <button
+                                    class="bg-white text-gray-950 active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                                    type="submit" style="transition: all 0.15s ease 0s;">
+                                    Submit
+                                </button>
+                            </div>
+            
+                        </form>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+{% endblock %}

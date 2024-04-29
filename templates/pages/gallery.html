@@ -1,0 +1,29 @@
+
+{% extends "layout.html" %}
+{% block content1 %}
+
+
+<div class="mt-44 md:mt-14 mb-6">
+    <div class="container  mx-auto px-4 lg:max-w-5xl">
+        <h2 class="mb-8 mt-6 text-4xl tracking-tight font-extrabold text-pr2">Gallery</h2>
+
+        {% for category in media_category %}
+
+            <h2 class="m-2 text-2xl text-center tracking-tight font-extrabold text-pr2">{{ category.name }}</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {% for obj in media %}
+                    {% if obj.category.pk == category.pk %}
+                        <div>
+                            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+                        </div>
+                        <div>
+                            <img class="h-auto max-w-full rounded-lg" src="{ {obj.file.url }}" alt="">
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

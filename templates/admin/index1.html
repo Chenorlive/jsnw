@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content1 %}
+
+<div class="mt-24 mb-20 md:mt-24">
+    <div class="container mx-auto px-4 lg:max-w-5xl">
+        <div class="grid grid-cols-2  gap-4 items-center  justify-center">
+
+            
+                <a href="{% url 'ad_list_blog' %}" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">Blog</h5>
+                    <p class="font-normal text-gray-700 ">Create, Edit and Publish new</p>
+                </a>
+
+                <a href="{% url 'ad_list_report' %}" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">Report</h5>
+                    <p class="font-normal text-gray-700 ">Create, Edit and Publish new</p>
+                </a>
+
+                <a href="{% url 'ad_list_question' %}" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">Question <span class="ml-3 p-2 text-white bg-red-500 rounded-lg">1</span></h5>
+                    <p class="font-normal text-gray-700 ">Create, Edit and Publish new</p>
+                </a>
+
+                <a href="{% url 'ad_list_media' %}" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">Media</h5>
+                    <p class="font-normal text-gray-700 ">Create, Edit and Publish new</p>
+                </a>
+        </div>
+    </div>  
+</div>
+
+{% endblock %}

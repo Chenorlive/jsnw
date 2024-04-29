@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!--<script src="{% static 'js/tailwind.js' %}"></script>-->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pr1: '#008000',
+            pr2: '#00DD00',
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/flowbite@1.4.4/dist/flowbite.js"></script>
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  <style>
+    @property --num-transactions {
+      syntax: "<integer>";
+      initial-value: 0;
+      inherits: false;
+    }
+
+    @property --num-assets {
+      syntax: "<integer>";
+      initial-value: 0;
+      inherits: false;
+    }
+
+    @property --num-users {
+      syntax: "<integer>";
+      initial-value: 0;
+      inherits: false;
+    }
+
+    @keyframes counter {
+      from {
+        --num-transactions: 0;
+        --num-assets: 0;
+        --num-users: 0;
+      }
+      to {
+        --num-transactions: 44;
+        --num-assets: 12;
+        --num-users: 84;
+      }
+    }
+  </style>
+
+
+  
+</head>
+<body class=" bg-gradient-to-r from-gray-50 to-gray-50">
+  <div class=" ">
+    
+    
+
+    {% block content %}
+
+    {% endblock %}
+
+  </div>
+
+  
+  <script src="https://maps.googleapis.com/maps/api/js?key=&loading=async&libraries=places&callback=initMap" async defer></script>
+</body>
+</html>

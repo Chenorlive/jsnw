@@ -1,0 +1,21 @@
+
+
+
+{% load static %}
+<div class=" mb-6">
+    <a href="{% url 'download_report' pk %}" class="flex justify-between p-1  items-center text-gray-900 bg-white border border-pr2 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-pr1 hover:text-white">
+        
+        <div class="p-4 leading-normal">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight ">{{ name }}</h5>
+        </div>
+        <div  class="flex flex-col items-center justify-between w-full py-2 px-3 rounded  md:border-0 md:hover:text-pr2 md:p-0 md:w-auto ">
+            <svg class="w-[48px] h-[48px]  " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M13 11.15V4a1 1 0 1 0-2 0v7.15L8.78 8.374a1 1 0 1 0-1.56 1.25l4 5a1 1 0 0 0 1.56 0l4-5a1 1 0 1 0-1.56-1.25L13 11.15Z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd" d="M9.657 15.874 7.358 13H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-2.358l-2.3 2.874a3 3 0 0 1-4.685 0ZM17 16a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H17Z" clip-rule="evenodd"/>
+              </svg>
+              <h6>{{dl}} Download</h6>
+        </div>
+    </a>
+</div>
+
+  

@@ -1,0 +1,347 @@
+{% extends "layout.html" %}
+{% block content1 %}
+{% load static %}
+
+<div class=" bg-gray-100 mt-20 px-6 md:px-16 lg:px-28">
+
+    <div class="border-1 shadow-lg shadow-gray-700 rounded-lg">
+
+        <!-- top content -->
+        <div class="flex rounded-t-lg bg-green-700 text-white sm:px-2 w-full ">
+            <div class="h-40 w-40 overflow-hidden sm:rounded-full sm:relative sm:p-0 top-10 left-8 lg:left-10 2xl:left-36 p-3">
+                <img src="{% static 'images/hon_pic.jpeg'%}" />
+            </div>
+
+            <div class="w-2/3 sm:text-center pl-5 mt-10 text-start">
+                <p class="font-poppins font-bold text-heading sm:text-4xl text-2xl">
+                    Hon. Johnson S. N. Williams Sr.
+                </p>
+                <p class="text-heading">Representative, District #3
+                <p>River Gee county, RL</p>
+                </p>
+            </div>
+
+        </div>
+
+        <!-- main content -->
+        <div class="p-5">
+
+            <div class="flex flex-col sm:flex-row sm:mt-10">
+
+                <div class="flex flex-col sm:w-1/3">
+                    <!-- Education Background -->
+                    <div class="py-3 sm:order-none order-1">
+                        <h2 class="text-lg font-poppins font-bold text-top-color">Education Background</h2>
+                        <div class="border-2 w-20 border-top-color my-3"></div>
+
+                        <div class="flex flex-col space-y-2">
+
+                            <div class="flex flex-col">
+                                <p class="font-semibold text-xs text-gray-700">1982</p>
+                                <p class="text-sm font-medium"><span class="text-green-700">Margrette Gibson
+                                        Kindergarten School
+                                    </span>, River Gee, Liberia.
+                                </p>
+                                <p class="font-bold text-xs text-gray-700 mb-2">Primary Education (1 & 2) in a year</p>
+                            </div>
+
+                            <div class="flex flex-col">
+                                <p class="font-semibold text-xs text-gray-700">1982-1989</p>
+                                <p class="text-sm font-medium"><span class="text-green-700">Nyaake Community School
+                                    </span>, River Gee, Liberia.
+                                </p>
+                                <p class="font-bold text-xs text-gray-700 mb-2">Civil war forced the school to closure
+                                </p>
+                            </div>
+
+                            <div class="flex flex-col">
+                                <p class="font-semibold text-xs text-gray-700">1992-1999</p>
+                                <p class="text-sm font-medium"><span class="text-green-700">ADRA-UNHCR School
+                                    </span>, Cote d’Ivoire.
+                                </p>
+                                <p class="font-bold text-xs text-gray-700 mb-2">He continued his secondary schooling in
+                                    the Frontline Education System</p>
+                            </div>
+
+                            <div class="flex flex-col">
+                                <p class="font-semibold text-xs text-gray-700">1999</p>
+                                <p class="text-sm font-medium"><span class="text-green-700">Cape Palmas High School
+                                    </span>, Cote d’Ivoire.
+                                </p>
+                                <p class="font-bold text-xs text-gray-700 mb-2">Graduated with Honors.</p>
+                            </div>
+
+                            <div class="flex flex-col">
+                                <p class="font-semibold text-xs text-gray-700">2010</p>
+                                <p class="text-sm font-medium">
+                                    <span class="text-green-700">Associate of Arts Degree</span>,
+                                    Stella Maris Polytechnic.
+                                </p>
+
+                            </div>
+
+                            <div class="flex flex-col">
+                                <p class="font-semibold text-xs text-gray-700">2012</p>
+                                <p class="text-sm font-medium">
+                                    <span class="text-green-700">Bachelor of Business Administration (BBA)</span>,
+                                    Stella Maris Polytechnic.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="py-3 sm:order-none order-2">
+                        <h2 class="text-lg font-poppins font-bold text-top-color">Skills</h2>
+                        <div class="border-2 w-20 border-top-color my-3"></div>
+
+                        <div>
+                            <div class="flex items-center my-1">
+                                
+                                <div class="ml-2">• Leadership</div>
+                            </div>
+                            <div class="flex items-center my-1">
+                                
+                                <div class="ml-2">• Public Speaking</div>
+                            </div>
+                            <div class="flex items-center my-1">
+                                
+                                <div class="ml-2">• Employee Relation</div>
+                            </div>
+                            <div class="flex items-center my-1">
+                                
+                                <div class="ml-2">Computer Skills</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- My contact -->
+                    <div class="py-3 sm:order-none order-3">
+                        <h2 class="text-lg font-poppins font-bold text-top-color">My Contact</h2>
+                        <div class="border-2 w-20 border-top-color my-3"></div>
+
+                        <div>
+                            <div class="flex items-center my-1">
+                                <a class="w-6 text-gray-700 hover:text-orange-600"><svg
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="h-4">
+                                        <path fill="currentColor"
+                                            d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <div class="ml-2 truncate">honorable@jnsw.org</div>
+                            </div>
+                            <div class="flex items-center my-1">
+                                <a class="w-6 text-gray-700 hover:text-orange-600"
+                                    aria-label="Visit TrendyMinds YouTube" href="" target="_blank"><svg
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="h-4">
+                                        <path fill="currentColor"
+                                            d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <div>JSNW Office</div>
+                            </div>
+                            <div class="flex items-center my-1">
+                                <a class="w-6 text-gray-700 hover:text-orange-600"
+                                    aria-label="Visit TrendyMinds Facebook" href="" target="_blank"><svg
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="h-4">
+                                        <path fill="currentColor"
+                                            d="m279.14 288 14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <div>JSNW Office</div>
+                            </div>
+                            <div class="flex items-center my-1">
+                                <a class="w-6 text-gray-700 hover:text-orange-600"
+                                    aria-label="Visit TrendyMinds Twitter" href="" target="_blank"><svg class="h-4"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path fill="currentColor"
+                                            d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <div>JSNW Office Page</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="flex flex-col sm:w-2/3 order-first sm:order-none sm:-mt-10">
+
+                    <!-- About me -->
+                    <div class="py-3">
+                        <h2 class="text-lg font-poppins font-bold text-top-color">About Me</h2>
+                        <div class="border-2 w-20 border-top-color my-3"></div>
+                        <p>
+                            Hon. Johnson Samuel Nagbe Williams, Sr. is a true son of the River Gee County. He was born
+                            onto
+                            the union of Mr. John Nyepah Williams, Sr. and Mrs. Sarah Tweh-ayeneh Howard-Salbie, on
+                            February
+                            18, 1978, Washington Hill, in the Township of Nyaake, Webbo Statutory District, River Gee
+                            County.
+                        </p>
+                        <p>
+                            Hon. Williams is commonly known as I’Wash amongst his childhood friends, and has withstood
+                            the
+                            test of time as a typical Liberian child; engaged in farming at early age and took care of
+                            his
+                            grandparents. Hon. Williams lived with his grandparents, up to age 19, when the civil war
+                            displaced
+                            the entire southeastern Liberia in 1994 for which he sought refuge in the Ivorian village of
+                            Tiboto,
+                            where he continued his primary education. It was during these times of hardship, challenges,
+                            and
+                            difficulties when he had the opportunity to meet, see and interact with his kinsmen as a
+                            refugee boy.
+                            Hon. Williams is a devoted Christian, Roman Catholic by faith: baptized, confirmed and
+                            married and
+                            blessed with five children and currently resides in one of his own properties.
+                        </p>
+
+                    </div>
+
+                    <div class="py-3">
+                        <h2 class="text-lg font-poppins font-bold text-top-color">Leadership and Professional Experience</h2>
+                        <div class="border-2 w-20 border-top-color my-3"></div>
+                        <p>
+                            Hon. Williams has served in several positions in the Catholic Church, rendering voluntary services 
+                            in youth activities, parish councils and his fraternity as well as on several committees. Hon. Williams 
+                            is a former President of the Catholic Young Adults Association at the Holy Innocents Catholic Church 
+                            located in New Matadi, Sinkor, Monrovia, Liberia. Hon. Williams became a member of the National Student
+                             Christian Council (NSCC), the Student Christian Movement of Liberia (SCM Liberia) in 2006 in Cape Palmas, 
+                             and was appointed Deputy Regional Coordinator for Southeastern Liberia.
+                        </p>
+                        <p>
+                            Hon. Williams was later elected National Secretary-General of SCM Liberia where he managed and coordinated
+                             the National Secretariat from 2013-2015. In 2014, he was elected by the World Student Christian 
+                             Federation to represent Liberia at the 35th General Assembly held in Bogota, Colombia. Hon. Williams 
+                             is the Founder and First President of the River Gee University Student Association at Stella Maris 
+                             Polytechnic. He is a founding member of the River Gee University Student Union – a platform that 
+                             provides the space for students and youth to have constructive dialogues with policymakers and local 
+                             authorities of the County.
+                        </p>
+                        <p>
+                            Hon. Williams is credited for organizing and hosting the First General Assembly of the River Gee 
+                            University Student Union at the Stella Maris Polytechnic main Campus on Capitol Hill. Hon. Williams 
+                            has worked for the Catholic Church of the Diocese of Cape Palmas from 2001-2007, serving in several 
+                            positions before becoming Head of Caritas Field Office for River Gee County. While serving in this 
+                            role, he managed several socio-economic development projects in the agriculture, health, WASH, social 
+                            welfare development and education sectors worth more than US$350,000. Beneficiaries of these services 
+                            included: Webbo, Tuobo, Sarbo, Potupo, Gbaepo, and Chedepo Districts. In January 2012, Hon. Williams 
+                            was admitted through a national competitive process as the first River Gee Citizen into the President’s 
+                            Young Professionals Program (PYPP), a flagship programme of former President Ellen Johnson Sirleaf 
+                            aimed at recruiting the next general of civil servants, and placed at the Department of Budget, 
+                            Ministry of Finance as Budget Analyst, a position which he occupied until he was promoted to the highest
+                            level in the Civil Service as Director for Budget Policy and Coordination. His roles as Director for 
+                             Budget Policy were to develop fiscal frameworks and coordinate the processes for the formulation of 
+                             the National Budget of the Government of Liberia. Throughout his tenure, has overseen the development
+                              and production of nine national budgets and several pieces of the fiscal policy instruments and 
+                              reports.
+                        </p>
+
+                    </div>
+
+                    <div class="py-3">
+                        <h2 class="text-lg font-poppins font-bold text-top-color">Contributions to the District and County</h2>
+                        <div class="border-2 w-20 border-top-color my-3"></div>
+                        <p>
+                            Hon. Williams leadership capabilities and project management skills brought reliefs to thousands of 
+                            River Gee citizens and other residents in the county when he was Head of Caritas Field Office from 
+                            2006-2007; his influence brought about the renovation of the Gbaweleken Market in Tuobo, construction 
+                            of hand pumps in Sarbo, construction of shelters in Fish Town, Pronoken, Jarkaken, etc., distribution 
+                            of thousands of households materials, agricultural inputs and tools for farmers, including female farmers, 
+                            etc. across the district.
+                        </p>
+                        <p>
+                            Hon. Williams supported RIGUSU student representatives at the 2015 County Development Sittings held in Webbo Statutory District which result into the allocation of more than US$40,000 in scholarships and financial aid covering all public and private universities and colleges in the Country. Additionally, the holding of the first General Assembly of the River Gee University Student Union raised thousands of United States Dollars in scholarship grants from NOCAL and other donors which helped many struggling River Gee citizens studying at the various universities and colleges. Hon. Williams continues to support several River Gee citizens at various public and private schools as well as universities and colleges across the Country. Hon. Williams has made immense contributions towards community development projects including education (provided assorted cartons of MOE prescribed textbooks senior secondary school in Webbo and assisted the reopening of a pre-primary school in Kaibo-Worté since 1964 with MOE prescribed textbooks and initial stipend for volunteer teachers; provided 100 classroom desks for the public school in Glarro U-Bor; contributed L$100,000 towards to the rehabilitation of the Nyenebo Kabuken Elementary School), health (provided chemicals that prevented the collapse of the Jimmyville Clinic in Webbo and medical supplies), roads infrastructure (provided substantial financial contributions for roadside brushing, roads maintenance and bridge construction in Nyenebo, Gyetu and Glarro) and water and sanitation (provided financial contributions for rehabilitation of several water wells and pumps in the District. Other contributions include support to community radio stations and religious institutions. Hon. Williams has supported and continues to support peace and reconciliation efforts in the Deabo Chiefdom and the entire District #3 at large.
+                        </p>
+
+                    <!-- Professional Experience -->
+                    <div class="py-3">
+                        <h2 class="text-lg font-poppins font-bold text-top-color">Professional Experience</h2>
+                        <div class="border-2 w-20 border-top-color my-3"></div>
+
+                        <div class="flex flex-col">
+
+                            <div class="flex flex-col">
+                                <p class="text-lg font-bold text-gray-700">
+                                    Republic of Liberia | Representative, District #3
+                                    <p>River Gee </p>
+                                <p class="font-semibold text-sm text-gray-700">2023 - Present</p>
+                                <p class="font-semibold text-sm text-gray-700 mt-2 mb-1">Key Responsibilities</p>
+                                <ul class="text-sm list-disc pl-4 space-y-1">
+                                    <li>Coordination of the development of the National Budget</li>
+                                    <li></li>
+                                </ul>
+                            </div>
+
+                            <div class="flex flex-col mt-8">
+                                <p class="text-lg font-bold text-gray-700">Ministry of Finance & Development Planning,
+                                    Government of Liberia | Assistant Director</p>
+                                <p class="font-semibold text-sm text-gray-700">2013 - 2023</p>
+                                <p class="font-semibold text-sm text-gray-700 mt-2 mb-1">Key Responsibilities</p>
+                                <ul class="text-sm list-disc pl-4 space-y-1">
+                                    <li>Coordination of the development of the National Budget</li>
+                                    <li>Delivering highly efficient solutions</li>
+                                    <li>Solving critical bugs</li>
+                                </ul>
+                            </div>
+
+                            <div class="flex flex-col mt-8">
+                                <p class="text-lg font-bold text-gray-700">GIZ | Training Assistant</p>
+                                <p class="font-semibold text-sm text-gray-700">2009-2013</p>
+                                <p class="font-semibold text-sm text-gray-700 mt-2 mb-1">Key Responsibilities</p>
+                                <ul class="text-sm list-disc pl-4 space-y-1">
+                                    <li>Developed usable components</li>
+                                    <li>Solving complex problems</li>
+                                    <li>Solving critical bugs</li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Projects 
+                    <div class="py-3">
+                        <h2 class="text-lg font-poppins font-bold text-top-color">Projects</h2>
+                        <div class="border-2 w-20 border-top-color my-3"></div>
+
+                        <div class="flex flex-col">
+
+                            <div class="flex flex-col">
+                                <p class="text-lg font-semibold text-gray-700">Used Books mobile app</p>
+                                <p class="font-normal text-sm text-gray-700 mb-1 pl-2">A platform to sell as well as to
+                                    buy used books only for PCCoE College due to this reuse of books will be there
+                                    beneficial for environment also indirectly helps increase communication between
+                                    juniors and seniors.</p>
+                            </div>
+                            <div class="flex flex-col">
+                                <p class="text-lg font-semibold text-gray-700">Parking Automation System</p>
+                                <p class="font-normal text-sm text-gray-700 mb-1 pl-2">it’s a web application which
+                                    helps you to book your slot for your car just like booking a movie ticket from home.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>-->
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}
