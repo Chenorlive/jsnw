@@ -20,8 +20,8 @@ def index(request):
 
     blog = Blog.objects.all().order_by('created_at')[:4]
 
-
-    return render(request=request, template_name="pages/index.html")
+    context = {'blog': blog}
+    return render(request=request, template_name="pages/index.html", context=context)
 
 
 def about(request):
@@ -147,27 +147,29 @@ class QuestionListView_(generic.ListView):
     paginate_by = 30
     context_object_name = 'objects'
     extra_context = {'year': datetime.now().year, 'title': 'Home', 'list': [1,2,3,4,5]}
-    template_name = 'admin/question_list.html'
+    template_name = 'admin/question/question_list.html'
 
 class QuestionDetailView(generic.DetailView):
     model = Question
-    template_name = 'admin/question_list.html'
+    template_name = 'admin/question/question_list.html'
 
 
 class QuestionCreateView(generic.CreateView):
     model = Question
-    template_name = 'admin/question_create.html'
+    template_name = 'admin/question/question_create.html'
     form_class = QuestionForm
+    success_url = '/admin/question/'
 
 class QuestionUpdateView(generic.UpdateView):
     model = Question
-    template_name = 'admin/question_create.html'
+    template_name = 'admin/question/question_create.html'
     form_class = QuestionForm
+    success_url = '/admin/question'
 
 class QuestionDeleteView(generic.DeleteView):
     model = Question
-    template_name = 'admin/question_create.html'
-    form_class = QuestionForm
+    template_name = 'admin/question/question_create.html'
+    success_url = '/admin/question/'
 
 # Blog
 
@@ -177,26 +179,29 @@ class BlogListView_(generic.ListView):
     paginate_by = 30
     context_object_name = 'objects'
     extra_context = {'year': datetime.now().year, 'title': 'Home', 'list': [1,2,3,4,5]}
-    template_name = 'admin/blog_list.html'
+    template_name = 'admin/blog/blog_list.html'
 
 class BlogDetailView(generic.DetailView):
     model = Blog
-    template_name = 'admin/blog_list.html'
+    template_name = 'admin/blog/blog_list.html'
 
 
 class BlogCreateView(generic.CreateView):
     model = Blog
-    template_name = 'admin/blog_create.html'
+    template_name = 'admin/blog/blog_create.html'
     form_class = BlogForm
+    success_url = '/admin/blog/'
 
 class BlogUpdateView(generic.UpdateView):
     model = Blog
-    template_name = 'admin/blog_create.html'
+    template_name = 'admin/blog/blog_create.html'
     form_class = BlogForm
+    success_url = '/admin/blog/'
 
 class BlogDeleteView(generic.DeleteView):
     model = Blog
-    template_name = 'admin/blog_create.html'
+    template_name = 'admin/blog/blog_create.html'
+    success_url = '/admin/blog/'
 
 
 # Report
@@ -207,26 +212,29 @@ class ReportListView_(generic.ListView):
     paginate_by = 30
     context_object_name = 'objects'
     extra_context = {'year': datetime.now().year, 'title': 'Home', 'list': [1,2,3,4,5]}
-    template_name = 'admin/report_list.html'
+    template_name = 'admin/report/report_list.html'
 
 class ReportDetailView(generic.DetailView):
     model = Report
-    template_name = 'admin/report_list.html'
+    template_name = 'admin/report/report_list.html'
 
 
 class ReportCreateView(generic.CreateView):
     model = Report
-    template_name = 'admin/report_create.html'
+    template_name = 'admin/report/report_create.html'
     form_class = ReportForm
+    success_url = '/admin/report/'
 
 class ReportUpdateView(generic.UpdateView):
     model = Report
-    template_name = 'admin/report_create.html'
+    template_name = 'admin/report/report_create.html'
     form_class = ReportForm
+    success_url = '/admin/report/'
 
 class ReportDeleteView(generic.DeleteView):
     model = Report
-    template_name = 'admin/report_create.html'
+    template_name = 'admin/report/report_create.html'
+    success_url = '/admin/report/'
 
 
 # Media
@@ -237,26 +245,29 @@ class MediaListView_(generic.ListView):
     paginate_by = 30
     context_object_name = 'objects'
     extra_context = {'year': datetime.now().year, 'title': 'Home', 'list': [1,2,3,4,5]}
-    template_name = 'admin/media_list.html'
+    template_name = 'admin/media/media_list.html'
 
 class MediaDetailView(generic.DetailView):
     model = Media
-    template_name = 'admin/media_list.html'
+    template_name = 'admin/media/media_list.html'
 
 
 class MediaCreateView(generic.CreateView):
     model = Media
-    template_name = 'admin/media_create.html'
+    template_name = 'admin/media/media_create.html'
     form_class = MediaForm
+    success_url = '/admin/media/'
 
 class MediaUpdateView(generic.UpdateView):
     model = Media
-    template_name = 'admin/media_create.html'
+    template_name = 'admin/media/media_create.html'
     form_class = MediaForm
+    success_url = '/admin/media/'
 
 class MediaDeleteView(generic.DeleteView):
     model = Media
-    template_name = 'admin/media_create.html'
+    template_name = 'admin/media/media_create.html'
+    success_url = '/admin/media/'
 
 
 

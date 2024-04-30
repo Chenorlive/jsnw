@@ -7,8 +7,8 @@
         <div class="items-center flex flex-wrap justify-center {{ fl }}">
             <div class="w-full md:w-7/12 mx-auto mt-6 mb-8">
                 <h2 class=" text-center mb-8 text-4xl tracking-tight font-extrabold text-pr2">Recent News</h2>
-                {% for i in list %}
-                    {% include "components/blog1.html" with tx_pc="text-pr2" tx_c="text-gray-50" %}
+                {% for i in object %}
+                    {% include "components/blog1.html" with tx_pc="text-pr2" tx_c="text-gray-50" title=i.title|truncatechars:80 content=i.content|truncatechars:250 image=i.image.url %}
                 {% endfor %}
 
                 {% include "components/pagination.html" %}

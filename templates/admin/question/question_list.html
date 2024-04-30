@@ -5,6 +5,14 @@
 <div class="mt-3 mx-1 md:mx-auto max-w-5xl text-center">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50  ">
+            <div class="flex items-center justify-between">
+                <h2 class="text-4xl tracking-tight font-extrabold text-pr1">Question List</h2>
+                <div>
+                    <a href="{% url 'ad_index' %}" class="p-2 bg-pr1 text-white border border-white-1 rounded-lg hover:bg-pr2">Back</a>
+                    <a href="{% url 'ad_new_question' %}" class="p-2 bg-pr1 text-white border border-white-1 rounded-lg hover:bg-pr2">Add Question</a>
+                </div>
+                
+            </div>
             <tr>
                 <th scope="col" class="px-4 py-3">
                     Question

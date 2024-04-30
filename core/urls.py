@@ -8,6 +8,7 @@ from .views import (
     BlogListView_, BlogDetailView, BlogUpdateView, BlogCreateView,
     ReportListView_, ReportCreateView, ReportDetailView, ReportUpdateView,
     MediaListView_, MediaCreateView, MediaDetailView, MediaUpdateView,
+    MediaDeleteView, BlogDeleteView, QuestionDeleteView, ReportDeleteView,
     downloadReport
 )
 
@@ -38,21 +39,26 @@ urlpatterns = [
     path('admin/question/<int:pk>/', QuestionDetailView.as_view(), name='ad_detail_question'),
     path('admin/question/new/', QuestionCreateView.as_view(), name='ad_new_question'),
     path('admin/question/update/<pk>/', QuestionUpdateView.as_view(), name='ad_update_question'),
+    path('admin/question/delete/<pk>/', QuestionDeleteView.as_view(), name='ad_delete_question'),
 
     path('admin/blog/', BlogListView_.as_view(), name='ad_list_blog'),
     path('admin/blog/<int:pk>/', BlogDetailView.as_view(), name='ad_detail_blog'),
     path('admin/blog/new/', BlogCreateView.as_view(), name='ad_new_blog'),
     path('admin/blog/update/<int:pk>/', BlogUpdateView.as_view(), name='ad_update_blog'),
+    path('admin/blog/delete/<int:pk>/', BlogDeleteView.as_view(), name='ad_delete_blog'),
 
     path('admin/report/', ReportListView_.as_view(), name='ad_list_report'),
     path('admin/report/<int:pk>/', ReportDetailView.as_view(), name='ad_detail_report'),
-    path('admin/report/', ReportCreateView.as_view(), name='ad_new_report'),
+    path('admin/report/new/', ReportCreateView.as_view(), name='ad_new_report'),
     path('admin/report/update/<int:pk>/', ReportUpdateView.as_view(), name='ad_update_report'),
+     path('admin/report/delete/<int:pk>/', ReportDeleteView.as_view(), name='ad_delete_report'),
 
     path('admin/media/', MediaListView_.as_view(), name='ad_list_media'),
     path('admin/media/<int:pk>/', MediaDetailView.as_view(), name='ad_detail_media'),
     path('admin/media/new/', MediaCreateView.as_view(), name='ad_new_media'),
     path('admin/media/update/<int:pk>/', MediaUpdateView.as_view(), name='ad_update_media'),
+    path('admin/media/delete/<int:pk>/', MediaDeleteView.as_view(), name='ad_delete_media'),
+
 
     path('download/report/<int:pk>/', downloadReport, name="download_report")
 ]

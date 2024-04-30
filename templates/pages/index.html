@@ -134,9 +134,10 @@
           
         
           <div class="flex flex-wrap justify-around">
-            {% include "components/blog.html" with bg_c="bg-transparent" tx_pc="text-pr1" tx_c="text-gray-50" %}
-            {% include "components/blog.html" with bg_c="bg-transparent" tx_pc="text-pr1" tx_c="text-gray-50" %}
-            {% include "components/blog.html" with bg_c="bg-transparent" tx_pc="text-pr1" tx_c="text-gray-50" %}
+            {% for i in blog %}
+              {% include "components/blog.html" with bg_c="bg-transparent" tx_pc="text-pr1" tx_c="text-gray-50" title=i.title|truncatechars:50 content=i.content|truncatechars:200 image=i.image.url %}
+            {% endfor%}
+            
           </div>
           
         </div>

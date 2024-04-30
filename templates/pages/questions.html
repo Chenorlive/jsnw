@@ -7,8 +7,8 @@
         <div class="items-center flex flex-col-reverse flex-wrap md:flex-row justify-center ">
             <div class="w-full  md:w-7/12 mx-auto mt-6">
                 <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-pr2">Question & Answers</h2>
-                {% for i in list %}
-                    {% include "components/question.html" with pk=i %}
+                {% for i in object %}
+                    {% include "components/question.html" with question=i.question answer=i.answer %}
                 {% endfor %}
 
                 {% include "components/pagination.html" %}

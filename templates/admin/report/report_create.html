@@ -9,28 +9,21 @@
                     <div class="bg-white p-4 text-center ">
                         <h1
                             class="max-w-2xl mb-4 text-4xl text-pr2 font-extrabold tracking-tight leading-none md:text-5xl  uppercase ">
-                            Create Questions </h1>
+                            Create Report </h1>
                     </div>
                     <blockquote class="relative p-8 mb-4 ">
                         {% include "components/utilities/divider.html" with div_c="text-pr2" div_hs="100px" div_m="99px"  %}
 
-                        <form method="post" action="{% url 'ad_new_question' %}" enctype="multipart/form-data" >
+                        <form method="post" action="{% url 'ad_new_report' %}" enctype="multipart/form-data">
                             {% csrf_token %}
                             <div class="relative w-full m-4">
-                                {% include "components/utilities/input_d.html" with input=form.name label="Name" label_t=form.name.id_for_label error=form.number.errors %}
+                                {% include "components/utilities/input_d.html" with input=form.name label="Name" label_t=form.name.id_for_label error=form.name.errors %}
                             </div>
                             <div class="relative w-full m-4">
-                                {% include "components/utilities/input_d.html" with input=form.number label="Number" label_t=form.number.id_for_label error=form.name.errors %}
-                            </div>
-                            <div class="relative flex w-full m-4">
-                                {% include "components/utilities/input_radio_d.html" with input=form.is_fqa label="It is FAQ" label_t=form.is_fqa.id_for_label error=form.is_fqa.errors %}
-                                {% include "components/utilities/input_radio_d.html" with input=form.is_suggestion label="It is Suggestion" label_t=form.is_suggestion.id_for_label error=form.is_suggestion.errors %}
+                                {% include "components/utilities/input_d.html" with input=form.description label="Description (optional)" label_t=form.description.id_for_label error=form.description.errors %}
                             </div>
                             <div class="relative w-full m-4">
-                                {% include "components/utilities/input_d.html" with input=form.question label="Question / " label_t=form.question.id_for_label error=form.question.errors %}
-                            </div>
-                            <div class="relative w-full m-4">
-                                {% include "components/utilities/input_d.html" with input=form.answer label="Answer" label_t=form.answer.id_for_label error=form.answer.errors %}
+                                {% include "components/utilities/input_d.html" with input=form.file label="File" label_t=form.file.id_for_label error=form.file.errors %}
                             </div>
                             <div class="text-center mt-6">
                                 <button
@@ -47,6 +40,10 @@
     </div>
 </div>
 </div>
+
+<script>
+    
+</script>
 
 
 {% endblock %}

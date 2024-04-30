@@ -35,13 +35,13 @@ class BlogCategory(BaseModel):
 
 
 class Blog(BaseModel):
-    tittle = models.CharField(max_length=255)
+    title = models.CharField(max_length=255)
     content = models.TextField()
     image = models.ImageField(upload_to="Blog cover", blank=True, null=True)
     category = models.ForeignKey(BlogCategory, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.tittle
+        return self.title
 
 class BlogFile(BaseModel):
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
