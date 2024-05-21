@@ -14,7 +14,7 @@
                     <blockquote class="relative p-8 mb-4 ">
                         {% include "components/utilities/divider.html" with div_c="text-pr2" div_hs="100px" div_m="99px"  %}
 
-                        <form method="post" action="{% url 'ad_new_report' %}" enctype="multipart/form-data">
+                        <form method="post" action="{% url 'ad_update_report' obb.pk  %}" enctype="multipart/form-data">
                             {% csrf_token %}
                             <div class="relative w-full m-4">
                                 {% include "components/utilities/input_d.html" with input=form.name label="Name" label_t=form.name.id_for_label error=form.name.errors %}

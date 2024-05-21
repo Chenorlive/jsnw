@@ -3,13 +3,13 @@ from .views import (
     index, about, createMember, createQuestion,
     BlogListView, QuestionListView, ReportListView,
     login_view, logout_view, aboutDistrict, FAQListView,
-    gallery, adminIndexView, QuestionCreateView, QuestionUpdateView,
+    GalleryListView, adminIndexView, QuestionCreateView, QuestionUpdateView,
     QuestionListView_, QuestionDetailView, contact, 
     BlogListView_, BlogDetailView, BlogUpdateView, BlogCreateView,
     ReportListView_, ReportCreateView, ReportDetailView, ReportUpdateView,
     MediaListView_, MediaCreateView, MediaDetailView, MediaUpdateView,
     MediaDeleteView, BlogDeleteView, QuestionDeleteView, ReportDeleteView,
-    downloadReport
+    downloadReport, initiative
 )
 
 
@@ -20,9 +20,10 @@ urlpatterns = [
     path('blog/', BlogListView.as_view(), name='blog'),
     path('question/', QuestionListView.as_view(), name='question'),
     path('faq/', FAQListView.as_view(), name='faq'),
-    path('report/', ReportListView.as_view(), name='report'),
-    path('about/district', aboutDistrict, name='about_dis'),
-    path('gallery', gallery, name='gallery'),
+    path('initiative/<pk>', initiative, name='initiative'),
+    path('report/<category>/', ReportListView.as_view(), name='report'),
+    path('about/district/', aboutDistrict, name='about_dis'),
+    path('gallery/<category>/', GalleryListView.as_view(), name='gallery'),
 
 
     path('member/new', createMember, name='new_member'),

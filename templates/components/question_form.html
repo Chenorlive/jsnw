@@ -4,9 +4,9 @@
 class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300"
 >
               <div class="flex-auto p-5 lg:p-10">
-                <h4 class="text-xl  font-semibold uppercase">Ask Question / Suggestion</h4>
-                <p class="hidden md:block leading-relaxed mt-1 mb-4 text-gray-600">
-                  Complete this form and we will get back to you in 24 hours.
+                <h4 class="text-sm  font-semibold uppercase">Your Questions or Suggestions</h4>
+                <p class="hidden md:block leading-relaxed mt-1 mb-4 text-gray-600 text-[10px]">
+                  Send us your questions or suggestions, and we'll respond in 24 hours.
                 </p>
                 <form method="post" action="{% url 'new_question' %}">
                   {% csrf_token %}
@@ -23,6 +23,29 @@ class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-
                     style="transition: all 0.15s ease 0s;"
                   />
                 </div>
+                <div class="relative flex w-full mb-3">
+                  <input
+                  type="radio"
+                  name="gender"
+                  class="m-1 w-6"
+                  value="Male"
+                  />
+                  <label
+                  class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                  >Male</label
+                  >
+
+                  <input
+                  type="radio"
+                  name="gender"
+                  class="m-1 w-6 "
+                  value="Female"
+                  />
+                  <label
+                  class="block uppercase text-gray-700 text-xs font-bold mb-2"
+                  >Female</label
+                  >
+              </div>
                 <div class="relative w-full mb-3">
                     <label
                     class="block uppercase text-gray-700 text-xs font-bold mb-2"

@@ -3,139 +3,32 @@
 
 
 
-{% include "components/hero.html" with h1="Office of the Representative of River Gee, District 3" h2="Join us in sharping a brighter future for all. Together, we can build a stonger, more inclusive society" %}
-
-<section class="pb-12 bg-white -mt-28">
-    <div class="relative">
-    <div class="container mx-auto px-4">
-      {% include "components/utilities/divider.html" with div_c="text-white" div_hs="130px" div_m="85px" div_h="155px" %}
-         
-        <div class="flex flex-wrap flex-row-reverse md:flex-row">
-            <div class="w-full md:w-8/12 lg:w-7/12 px-4  z-30 ">
-                <div
-                class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-pr1"
-                >
-                <div class="bg-white p-2 text-center rounded-lg ">
-                    <h1 class="max-w-2xl mb-4 text-2xl text-black font-extrabold tracking-tight leading-none lg:text-3xl  uppercase ">Are You from River Gee? <br> <span class="text-xl lg:text-2xl ">Kindly get in contact with us.</span></h1>
-                </div>
-                <blockquote class="relative p-8 mb-4  ">
-                  {% include "components/utilities/divider.html" with div_c="text-pr1" div_hs="100px" div_m="99px" div_h="100px" %}
-                    
-                    <form method="post" action="{% url 'new_member' %}">
-                      {% csrf_token %}
-                        <div class="relative w-full mb-3 mt-4">
-                            <label
-                            class="block uppercase text-gray-100 text-xs font-bold mb-2"
-                            for="full-name"
-                            >Full Name</label
-                            ><input
-                            type="text"
-                            name="name"
-                            class="border-0 p-3  placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                            placeholder="Full Name"
-                            style="transition: all 0.15s ease 0s;"
-                            required
-                            />
-                        </div>
-                        <div class="grid md:grid-cols-3 md:gap-6">
-                            <div class="relative w-full mb-2">
-                                <label
-                                class="block uppercase text-gray-100 text-xs font-bold mb-2"
-                                for="email"
-                                >Number</label
-                                ><input
-                                type="text"
-                                name="number"
-                                class="border-0 p-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                                placeholder="Phone Number"
-                                style="transition: all 0.15s ease 0s;"
-                                required
-                                />
-                            </div>
-                            <div class="relative w-full mb-3">
-                                <label
-                                class="block uppercase text-gray-100 text-xs font-bold mb-2"
-                                for="email"
-                                >Email</label
-                                ><input
-                                type="email"
-                                name="email"
-                                class="border-0 p-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                                placeholder="Email (optional)"
-                                style="transition: all 0.15s ease 0s;"
-                                />
-                            </div>
-                            <div class="relative w-full mb-3">
-                                <label
-                                class="block uppercase text-gray-100 text-xs font-bold mb-2"
-                                for="email"
-                                >Address</label
-                                ><input
-                                type="text"
-                                name="address"
-                                class="border-0 p-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                                placeholder="Location (optional)"
-                                style="transition: all 0.15s ease 0s;"
-                                />
-                            </div>
-                        </div>
-                        <div class="relative w-full mb-3">
-                            <label
-                            class="block uppercase text-gray-100 text-xs font-bold mb-2"
-                            for="message"
-                            >Comment</label
-                            ><textarea
-                            rows="4"
-                            cols="80"
-                            name="comment"
-                            class="border-0 p-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                            placeholder="Type a message... (optional)"
-                            ></textarea>
-                        </div>
-                        <div class="text-center mt-4">
-                            <button
-                            class="bg-white text-gray-950 active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                            type="submit"
-                            style="transition: all 0.15s ease 0s;"
-                            >
-                            Submit
-                            </button>
-                        </div>
-                        </div>
-                    </form>
-                </blockquote>
-                </div>
-                <div class="w-full md:w-4/12 lg:w-5/12 px-4  z-30 ">
-                  {% include "components/utilities/number_countup.html" with n1="124" t1="Populations" n2="12" t2="Distinct Group" n3="4609" t3="Major crop" %}
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+  {% include "components/hero.html" with h1="Office of the Representative <br> Electoral District 3, River Gee County" h2="Join us in sharping a brighter future for all. Together, we can build a stonger, more inclusive society" %}
 
 
 
-
-<section class="pb-48 pt-1 md:pt-2 bg-gray-950 -mt-20">
+<section class="pb-48 pt-1 md:pt-2 bg-gray-50 -mt-20">
     <div class="relative ">
 
-      {% include "components/utilities/divider.html" with n1="44" div_c="text-gray-950" div_hs="130px" div_m="140px" div_h="100px" %}
+      {% include "components/utilities/divider.html" with n1="44" div_c="text-gray-50" div_hs="130px" div_m="140px" div_h="100px" %}
 
         <div class="container mx-auto">
 
           <div class="flex flex-wrap justify-center text-center mt-10 mb-14">
             <div class="w-full lg:w-6/12 px-4">
-              <h2 class="text-4xl font-semibold text-white">Our Latest Blog</h2>
-              <p class="text-lg leading-relaxed m-4 text-pr2">
-                River Gee District 3 Event, News, happening
-              </p>
+              <h2 class="text-4xl font-semibold text-black">Our Latest News</h2>
+              
             </div>
           </div>
           
         
           <div class="flex flex-wrap justify-around">
             {% for i in blog %}
-              {% include "components/blog.html" with bg_c="bg-transparent" tx_pc="text-pr1" tx_c="text-gray-50" title=i.title|truncatechars:50 content=i.content|truncatechars:200 image=i.image.url %}
+              {% if i.image %}
+                {% include "components/blog.html" with bg_c="bg-transparent" tx_pc="text-pr1" tx_c="text-gray-900" title=i.title|truncatechars:50 content=i.content|truncatechars:200 image=i.image.url %}
+              {% else %}
+                {% include "components/blog.html" with bg_c="bg-transparent" tx_pc="text-pr1" tx_c="text-gray-900" title=i.title|truncatechars:50 content=i.content|truncatechars:200 %}
+              {% endif %}
             {% endfor%}
             
           </div>
@@ -217,9 +110,165 @@
   </div>
   </section>
 -->
- 
 
-<section class="mt-28 pb-4 bg-gray-950">
+<section class="pb-12 px-4 bg-white -mt-28">
+  <div class="relative">
+  <div class="container px-4">
+    {% include "components/utilities/divider.html" with div_c="text-white" div_hs="130px" div_m="85px" div_h="155px" %}
+       
+      <div class="flex flex-wrap flex-row-reverse md:flex-row">
+        <div class="w-full md:w-6/12 lg:w-5/12 px-4  z-30 ">
+          {% include "components/utilities/number_countup.html" with n1="124" t1="Populations" n2="12" t2="Distinct Group" n3="4609" t3="Major crop" %}
+        </div>
+          <div class="w-full md:w-6/12 lg:w-7/12 px-4  z-30 ">
+              <div
+              class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-pr1"
+              >
+              <div class="bg-white p-2 text-center rounded-lg ">
+                  <h1 class="max-w-2xl mb-4 text-2xl text-black font-extrabold tracking-tight leading-none lg:text-3xl  uppercase ">Are You from River Gee? <br> <span class="text-xl lg:text-2xl ">Kindly get in contact with us.</span></h1>
+              </div>
+              <blockquote class="relative p-8 mb-4  ">
+                {% include "components/utilities/divider.html" with div_c="text-pr1" div_hs="100px" div_m="99px" div_h="100px" %}
+                  
+                  <form method="post" action="{% url 'new_member' %}">
+                    {% csrf_token %}
+                      <div class="relative w-full mb-3 mt-4">
+                          <label
+                          class="block  text-gray-100 text-xs font-bold mb-2"
+                          for="full-name"
+                          >Full Name</label
+                          ><input
+                          type="text"
+                          name="name"
+                          class="border-0 p-3  placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                          placeholder="Full Name"
+                          style="transition: all 0.15s ease 0s;"
+                          required
+                          />
+                      </div>
+                      
+                      <div class="grid md:grid-cols-3 md:gap-6">
+
+                          <div class="relative w-full mb-2">
+                              <label
+                              class="block  text-gray-100 text-xs font-bold mb-2"
+                              for="email"
+                              >Number</label
+                              ><input
+                              type="text"
+                              name="number"
+                              class="border-0 p-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                              placeholder="Phone Number"
+                              style="transition: all 0.15s ease 0s;"
+                              required
+                              />
+                          </div>
+                          <div class="relative w-full mb-3">
+                              <label
+                              class="block  text-gray-100 text-xs font-bold mb-2"
+                              for="email"
+                              >Email</label
+                              ><input
+                              type="email"
+                              name="email"
+                              class="border-0 p-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                              placeholder="Email (optional)"
+                              style="transition: all 0.15s ease 0s;"
+                              />
+                          </div>
+                          <div class="relative w-full mb-3">
+                              <label
+                              class="block  text-gray-100 text-xs font-bold mb-2"
+                              for="email"
+                              >Current Address</label
+                              ><input
+                              required
+                              type="text"
+                              name="address"
+                              class="border-0 p-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                              placeholder="Location"
+                              style="transition: all 0.15s ease 0s;"
+                              />
+                          </div>
+                      </div>
+                      <div class=" text-gray-100 uppercase text-xs font-bold mb-1 mt-2">
+                        Your Place Of Origin
+                      </div>
+                      <div class="grid md:grid-cols-3 md:gap-6">
+                        <div class="relative w-full mb-3">
+                          <label
+                          class="block  text-gray-100 text-xs font-bold mb-2"
+                          for="email"
+                          >Town or Village</label
+                          >
+                          <select type="text" name="town" class="border-0 p-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" required>
+                            <option value>  -- Select --  </option>
+                            {% for obj in town %}
+                                <option value="{{obj.id}}">{{ obj.name}} </option>
+                            {% endfor %}
+                          </select>
+                      </div>
+                          <div class="relative w-full mb-3">
+                            <label
+                            class="block  text-gray-100 text-xs font-bold mb-2"
+                            for="email"
+                            >Administrative District</label
+                            >
+                            <select type="text" name="town" class="border-0 p-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" required>
+                              <option value> -- Select -- </option>
+                              {% for obj in district_A %}
+                                  <option value="{{obj.id}}">{{ obj.name}} </option>
+                              {% endfor %}
+                            </select>
+                        </div>
+                        <div class="relative w-full mb-3">
+                            <label
+                            class="block  text-gray-100 text-xs font-bold mb-2"
+                            for="email"
+                            >Electoral District</label
+                            >
+                            <select type="text" name="town" class="border-0 p-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" required>
+                              <option value> -- Select -- </option>
+                              {% for obj in district_E %}
+                                  <option value="{{obj.id}}">{{ obj.name}} </option>
+                              {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                      <div class="relative w-full mb-3">
+                          <label
+                          class="block  text-gray-100 text-xs font-bold mb-2"
+                          for="message"
+                          >Your Comment</label
+                          ><textarea
+                          rows="4"
+                          cols="80"
+                          name="comment"
+                          class="border-0 p-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                          placeholder="Type a message... (optional)"
+                          ></textarea>
+                      </div>
+                      <div class="text-center mt-4">
+                          <button
+                          class="bg-white text-gray-950 active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                          type="submit"
+                          style="transition: all 0.15s ease 0s;"
+                          >
+                          Submit
+                          </button>
+                      </div>
+                      </div>
+                  </form>
+              </blockquote>
+              </div>
+              
+          </div>
+      </div>
+  </div>
+</section>
+ 
+<!--
+<section class="mt-44 pb-4  bg-gray-950">
   <div class="relative">
     {% include "components/utilities/divider.html" with n1="44" div_c="text-gray-950" div_hs="130px" div_md="100px" div_m="110px" div_h="100px" %}
     <div class="container mx-auto px-4">
@@ -232,5 +281,96 @@
     </div>
   </div>
 </section>
+
+-->
+<div class="bg-gray-300 pt-4 pb-6 mb-0">
+    <div class="bottom-auto top-0 bg-gray-900 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+      style="height: 80px;">
+      <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+        version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+        <polygon class="text-gray-300 fill-current" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap">
+        <div class="w-full lg:w-6/12 px-4  ">
+          <h4 class="text-3xl font-semibold">Contact Us</h4>
+        
+          <div class="flex items-start p-2 mb-2 text-base  ">
+            <div>
+              <svg class="w-[30px] h-[30px] text-pr1 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M11.906 1.994a8.002 8.002 0 0 1 8.09 8.421 7.996 7.996 0 0 1-1.297 3.957.996.996 0 0 1-.133.204l-.108.129c-.178.243-.37.477-.573.699l-5.112 6.224a1 1 0 0 1-1.545 0L5.982 15.26l-.002-.002a18.146 18.146 0 0 1-.309-.38l-.133-.163a.999.999 0 0 1-.13-.202 7.995 7.995 0 0 1 6.498-12.518ZM15 9.997a3 3 0 1 1-5.999 0 3 3 0 0 1 5.999 0Z" clip-rule="evenodd"/>
+              </svg>                          
+            </div>
+            <div class="">
+                <h3>Office of the Representative</h3>
+                <p>Electoral District #3, River Gee County</p>
+                
+                <p>1st Floor, Room B1-20, Central Building</p>
+                <p>P.O. Box 9005, Capitol Hill, 1000 Monrovia, 10 Liberia</p>
+            </div>
+        </div>
+        <div class="flex items-start  mb-2 ">
+          <div>
+              
+              <svg class="w-[30px] h-[30px] text-pr1 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 15h12M6 6h12m-6 12h.01M7 21h10a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1Z"/>
+              </svg>
+              
+                            
+          </div>
+          <div class="text-base text-wrap">
+              Central Office Lines: 
+                  +231 (77) 662 7707 | (88) 859 5869 <br/>
+              District Office Line:
+              +231 (88) 731 7577<br>
+          </div>
+        </div>
+        <div class="flex items-start   ">
+          <div>
+            <svg class="w-[30px] h-[30px] text-pr1 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd"/>
+            </svg>
+            
+              
+          </div>
+          <div class=" text-base text-wrap">
+              Working Hours: 
+              Mondays – Fridays, 0900 Hrs to 1600 Hrs.<br>
+              Visiting Hours: 
+              Fridays, 0900 Hrs to 1200 Hrs.<br>
+          </div>
+        </div>
+          
+        </div>
+        <div class="w-full lg:w-6/12 py-4 px-4">
+          <div class="flex flex-wrap items-top mb-6">
+            <div class="w-full lg:w-4/12 px-4 ml-auto">
+              <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Useful Links</span>
+              <ul class="list-unstyled">
+                <li>
+                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="{% url 'about' %}">About Us</a>
+                </li>
+                <li>
+                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                    href="{% url 'blog' %}">Blog</a>
+                </li>
+                <li>
+                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                    href="{% url 'contact' %}">Contact Us</a>
+                </li>
+                <li>
+                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                    href="{% url 'report' 1 %}">Publications</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
 {% endblock %}

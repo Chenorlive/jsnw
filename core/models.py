@@ -42,6 +42,36 @@ class Blog(BaseModel):
 
     def __str__(self):
         return self.title
+    
+
+class DistrictA(BaseModel):
+    name = models.CharField(max_length=255)
+    description = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+    
+class DistrictE(BaseModel):
+    name = models.CharField(max_length=255)
+    description = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+    
+
+class Town(BaseModel):
+    name = models.CharField(max_length=255)
+    description = models.TextField(blank=True, null=True)
+    districtE = models.ForeignKey(DistrictE, on_delete=models.CASCADE)
+    districtA = models.ForeignKey(DistrictA, on_delete=models.CASCADE)
+
+
+    def __str__(self):
+        return self.name
+
+
+
+
 
 class BlogFile(BaseModel):
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
@@ -62,12 +92,19 @@ class Member(BaseModel):
     def __str__(self):
         return self.name
 
+class ReportCategory(BaseModel):
+    name = models.CharField(max_length=255)
+    description = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.name
 
 class Report(BaseModel):
     name = models.CharField(max_length=255)
     description = models.TextField()
     file = models.FileField(upload_to="Report File")
     download_count = models.IntegerField(default=0)
+    category = models.ForeignKey(ReportCategory, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -80,6 +117,8 @@ class Question(BaseModel):
     answer = models.TextField(blank=True, null=True)
     is_fqa = models.BooleanField(default=False)
     is_suggestion = models.BooleanField(default=False)
+    answer_time = models.DateTimeField(blank=True, null=True)
+    gender = models.CharField(max_length=255, choices=Gender, blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -100,4 +139,7 @@ class Media(BaseModel):
 
     def __str__(self):
         return self.name
+    
+
+
 

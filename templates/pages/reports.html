@@ -6,10 +6,25 @@
     <div class="container  mx-auto px-4 lg:max-w-5xl">
         <div class="items-start flex flex-wrap justify-center {{ fl }}">
             <div class="w-full md:w-7/12 mx-auto mt-6">
-                <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-pr2">Report</h2>
-                {% for obj in objects %}
-                    {% include "components/report.html" with pk=obj.pk name=obj.name dl=obj.download_count %}
-                {% endfor %}
+                {% if obb == '1' %}
+                    <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-pr2">Reports</h2>
+                {% elif obb == '2' %}
+                    <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-pr2">Strategic Plans</h2>
+                {% elif obb == '3' %}
+                    <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-pr2">Other Important Documents</h2>
+                {% endif %}
+
+                
+
+                {% if objects|length > 0 %}
+                    {% for obj in objects %}
+                        {% include "components/report.html" with pk=obj.pk name=obj.name dl=obj.download_count %}
+                    {% endfor %}
+                {% else %}
+                    <diV>
+                        Content under development ....
+                    </diV>
+                {% endif %}
 
                 {% include "components/pagination.html" %}
             </div>

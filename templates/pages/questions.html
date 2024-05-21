@@ -6,9 +6,9 @@
     <div class="container  mx-auto px-4 lg:max-w-5xl">
         <div class="items-center flex flex-col-reverse flex-wrap md:flex-row justify-center ">
             <div class="w-full  md:w-7/12 mx-auto mt-6">
-                <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-pr2">Question & Answers</h2>
+                <h2 class="mb-8 text-3xl tracking-tight font-extrabold text-pr2">Your Questions and Answers</h2>
                 {% for i in object %}
-                    {% include "components/question.html" with question=i.question answer=i.answer %}
+                    {% include "components/question.html" with question=i.question answer=i.answer name=i.name time=i.created_at|date:"N d Y H:i" %}
                 {% endfor %}
 
                 {% include "components/pagination.html" %}

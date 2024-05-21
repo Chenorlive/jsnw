@@ -7,7 +7,7 @@ from .models import (
 class QuestionForm(ModelForm):
     class Meta:
         model = Question
-        fields = ['name', 'number', 'question', 'answer', 'is_fqa', 'is_suggestion']
+        fields = ['name', 'gender', 'number', 'question', 'answer', 'is_fqa', 'is_suggestion', 'answer_time']
     
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -32,7 +32,7 @@ class BlogForm(ModelForm):
 class ReportForm(ModelForm):
     class Meta:
         model = Report
-        fields = ['name', 'description', 'file',]
+        fields = ['name', 'description', 'file', 'category']
     
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

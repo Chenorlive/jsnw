@@ -9,8 +9,9 @@
 
       </a>
       <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+
         <button type="button"
-          class="text-white bg-pr2 hover:bg-black focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-2 md:px-4 py-2 text-center">Coutribute</button>
+          class="text-white bg-pr1 hover:bg-black focus:ring-4 mx-2 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-2 md:px-4 py-2 text-center">Donate</button>
         <button data-collapse-toggle="navbar-sticky" type="button"
           class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
           aria-controls="navbar-sticky" aria-expanded="false">
@@ -20,6 +21,39 @@
               d="M1 1h15M1 7h15M1 13h15" />
           </svg>
         </button>
+        
+          <button id="dropdownNavbarLink6" data-dropdown-toggle="dropdownNavbar6"
+            class="text-white bg-pr1 hover:bg-black focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-2 md:px-4 py-2 mx-1 text-center ">
+            <svg class="w-[24px] h-[24px] text-gray-50 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" d="M12 20a7.966 7.966 0 0 1-5.002-1.756l.002.001v-.683c0-1.794 1.492-3.25 3.333-3.25h3.334c1.84 0 3.333 1.456 3.333 3.25v.683A7.966 7.966 0 0 1 12 20ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.5-4.44 9.963-9.932 10h-.138C6.438 21.962 2 17.5 2 12Zm10-5c-1.84 0-3.333 1.455-3.333 3.25S10.159 13.5 12 13.5c1.84 0 3.333-1.455 3.333-3.25S13.841 7 12 7Z" clip-rule="evenodd"/>
+            </svg>
+          </button>
+          <!-- Dropdown menu -->
+          <div id="dropdownNavbar6"
+            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 ">
+            <ul class="py-2 text-sm text-gray-700 " aria-labelledby="dropdownLargeButton">
+
+              {% if user.is_authenticated %}
+              <li>
+                <a href="{% url 'ad_index' %}"
+                  class="block border-t border-pr2 px-4 py-2 hover:bg-pr2 hover:text-white">Dashboard</a>
+              </li>
+              <li>
+                <a href="{% url 'logout' %}"
+                  class="block px-4 py-2 hover:bg-pr2 hover:text-white">Sign out</a>
+              </li>
+
+              {% else %}
+              <li>
+                <a href="{% url 'login' %}"
+                  class="block border-t border-pr2 px-4 py-2 hover:bg-pr2 hover:text-white">Sgn In</a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        
+
+        
       </div>
       <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
         <ul
@@ -38,66 +72,20 @@
               class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 ">
               <ul class="py-2 text-sm text-gray-700 " aria-labelledby="dropdownLargeButton">
                 <li>
-                  <a href="{% url 'about' %}" class="block px-4 py-2 hover:bg-pr2 hover:text-white ">About JNNW Sr.</a>
+                  <a href="{% url 'about' %}" class="block px-4 py-2 hover:bg-pr2 hover:text-white ">Proprietor Profile</a>
                 </li>
                 <li>
-                  <a href="#" class="block px-4 py-2 hover:bg-pr2 hover:text-white">About
-                    District</a>
+                  <a href="{% url 'about_dis' %}" class="block px-4 py-2 hover:bg-pr2 hover:text-white">District Profile</a>
                 </li>
-                <li>
-                  <a href="{% url 'contact' %}" class="block px-4 py-2 hover:bg-pr2 hover:text-white">Contact us</a>
-                </li>
-                {% if user.is_authenticated %}
-                <li>
-                  <a href="{% url 'ad_index' %}"
-                    class="block border-t border-pr2 px-4 py-2 hover:bg-pr2 hover:text-white">Dashboard</a>
-                </li>
-                <li>
-                  <a href="{% url 'logout' %}"
-                    class="block px-4 py-2 hover:bg-pr2 hover:text-white">Sign out</a>
-                </li>
-
-                {% else %}
-                <li>
-                  <a href="{% url 'login' %}"
-                    class="block border-t border-pr2 px-4 py-2 hover:bg-pr2 hover:text-white">Sgn In</a>
-                </li>
-                {% endif %}
+    
+                
               </ul>
             </div>
-          </li>
-          <li>
-            <button id="dropdownNavbarLink3" data-dropdown-toggle="dropdownNavbar3"
-              class="flex items-center justify-between w-full py-2 px-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-pr2 md:p-0 md:w-auto ">Feedback<svg
-                class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                viewBox="0 0 10 6">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="m1 1 4 4 4-4" />
-              </svg>
-            </button>
-            <!-- Dropdown menu -->
-            <div id="dropdownNavbar3"
-              class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 ">
-              <ul class="py-2 text-sm text-gray-700 " aria-labelledby="dropdownNavbar1Button">
-                <li>
-                  <a href="{% url 'question' %}" class="block px-4 py-2 hover:bg-pr2 hover:text-white ">Questions &
-                    Response</a>
-                </li>
-                <li>
-                  <a href="{% url 'faq' %}" class="block px-4 py-2 hover:bg-pr2 hover:text-white">FAQ</a>
-                </li>
-
-              </ul>
-            </div>
-          </li>
-          <li>
-            <a href="{% url 'report' %}"
-              class="block py-2 px-3 text-gray-900 rounded hover:bg-pr2 md:hover:bg-transparent md:hover:text-pr2 md:p-0 ">Reports</a>
           </li>
 
           <li>
             <button id="dropdownNavbarLink1" data-dropdown-toggle="dropdownNavbar1"
-              class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-pr2 md:p-0 md:w-auto ">Initiative<svg
+              class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-pr2 md:p-0 md:w-auto ">Initiatives<svg
                 class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                 viewBox="0 0 10 6">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -109,26 +97,98 @@
               class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 ">
               <ul class="py-2 text-sm text-gray-700 " aria-labelledby="dropdownNavbar1Button">
                 <li>
-                  <a href="#" class="block px-4 py-2 hover:bg-pr2 hover:text-white ">Community</a>
+                  <a href="{% url 'initiative' 1 %}" class="block px-4 py-2 hover:bg-pr2 hover:text-white ">Community</a>
                 </li>
                 <li>
-                  <a href="#" class="block px-4 py-2 hover:bg-pr2 hover:text-white">Women</a>
+                  <a href="{% url 'initiative' 2 %}" class="block px-4 py-2 hover:bg-pr2 hover:text-white">Women</a>
                 </li>
                 <li>
-                  <a href="#" class="block px-4 py-2 hover:bg-pr2 hover:text-white">Youth</a>
+                  <a href="{% url 'initiative' 3 %}" class="block px-4 py-2 hover:bg-pr2 hover:text-white">Youth</a>
                 </li>
 
               </ul>
             </div>
           </li>
+          
+          <li>
+            <button id="dropdownNavbarLink4" data-dropdown-toggle="dropdownNavbar4"
+              class="flex items-center justify-between w-full py-2 px-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-pr2 md:p-0 md:w-auto ">Publications<svg
+                class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m1 1 4 4 4-4" />
+              </svg>
+            </button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar4"
+              class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 ">
+              <ul class="py-2 text-sm text-gray-700 " aria-labelledby="dropdownNavbar1Button">
+                <li>
+                  <a href="{% url 'report' 1 %}" class="block px-4 py-2 hover:bg-pr2 hover:text-white ">Reports</a>
+                </li>
+                <li>
+                  <a href="{% url 'report' 2 %}" class="block px-4 py-2 hover:bg-pr2 hover:text-white">Strategic Plans</a>
+                </li>
+                <li>
+                  <a href="{% url 'report' 3 %}" class="block px-4 py-2 hover:bg-pr2 hover:text-white">Other Documents</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
           <li>
             <a href="{% url 'blog' %}"
               class="block py-2 px-3 text-gray-900 rounded hover:bg-pr2 md:hover:bg-transparent md:p-0">News</a>
           </li>
 
+          
           <li>
-            <a href="{% url 'gallery' %}"
-              class="block py-2 px-3 text-gray-900 rounded hover:bg-pr2 md:hover:bg-transparent md:hover:text-pr2 md:p-0">Gallery</a>
+            <button id="dropdownNavbarLink5" data-dropdown-toggle="dropdownNavbar5"
+              class="flex items-center justify-between w-full py-2 px-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-pr2 md:p-0 md:w-auto ">Gallery<svg
+                class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m1 1 4 4 4-4" />
+              </svg>
+            </button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar5"
+              class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 ">
+              <ul class="py-2 text-sm text-gray-700 " aria-labelledby="dropdownNavbar1Button">
+                <li>
+                  <a href="{% url 'gallery' 1 %}" class="block px-4 py-2 hover:bg-pr2 hover:text-white ">Images</a>
+                </li>
+                <li>
+                  <a href="{% url 'gallery' 2 %}" class="block px-4 py-2 hover:bg-pr2 hover:text-white">Videos</a>
+                </li>
+                <li>
+                  <a href="{% url 'gallery' 3 %}" class="block px-4 py-2 hover:bg-pr2 hover:text-white">Audios</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <button id="dropdownNavbarLink3" data-dropdown-toggle="dropdownNavbar3"
+              class="flex items-center justify-between w-full py-2 px-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-pr2 md:p-0 md:w-auto ">Feedbacks<svg
+                class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m1 1 4 4 4-4" />
+              </svg>
+            </button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar3"
+              class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 ">
+              <ul class="py-2 text-sm text-gray-700 " aria-labelledby="dropdownNavbar1Button">
+                <li>
+                  <a href="{% url 'question' %}" class="block px-4 py-2 hover:bg-pr2 hover:text-white ">Your Questions</a>
+                </li>
+                <li>
+                  <a href="{% url 'faq' %}" class="block px-4 py-2 hover:bg-pr2 hover:text-white">FAQ</a>
+                </li>
+
+              </ul>
+            </div>
           </li>
 
         </ul>
@@ -140,100 +200,32 @@
   {% if messages %}
   {% for message in messages %}
   <div
-    class="mt-28 mb-5 max-w-sm md:max-w-3xl py-4 px-8 mx-auto text-gray-50 m-4 text-sm rounded-lg {% if message.tags == 'error' %} bg-red-500 {% endif %} {% if message.tags == 'success' %} bg-green-400 {% endif %} "
+    class="mt-28 mb-5 max-w-sm md:max-w-3xl py-4 px-8 mx-auto text-gray-50 m-4 text-sm rounded-lg {% if message.tags == 'error' %} bg-red-500 {% endif %} {% if message.tags == 'success' %} bg-pr1 {% endif %} "
     role="alert">
     {{ message }}
   </div>
   {% endfor %}
   {% endif %}
 
-  {% block content1 %}
+  <div class="container">
+    {% block content1 %}
+
 
   {% endblock %}
+  </div>
+  
 
 
-  <footer class="relative bg-gray-300 pt-8 pb-6">
-    <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-      style="height: 80px;">
-      <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
-        version="1.1" viewBox="0 0 2560 100" x="0" y="0">
-        <polygon class="text-gray-300 fill-current" points="2560 0 2560 100 0 100"></polygon>
-      </svg>
-    </div>
-    <div class="container mx-auto px-4">
-      <div class="flex flex-wrap">
-        <div class="w-full lg:w-6/12 px-4">
-          <h4 class="text-3xl font-semibold">Let's keep in touch!</h4>
-          <h5 class="text-lg mt-0 mb-2 text-gray-700">
-            Find us on any of these platforms, we respond 1-2 business days.
-          </h5>
-          <div class="mt-6">
-            <a href="#">
-              <button
-                class="bg-white text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                type="button">
-                <i class="flex fab fa-twitter"></i>
-              </button>
-            </a>
-            <a>
-              <button
-                class="bg-white text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                type="button">
-                <i class="flex fab fa-facebook-square"></i>
-              </button>
-            </a>
-            <a>
-              <button
-                class="bg-white text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                type="button">
-                <i class="flex fab fa-instagram"></i>
-              </button>
-            </a>
-            <a>
-              <button
-                class="bg-white text-blue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                type="button">
-                <i class="flex fab fa-tiktok"></i>
-              </button>
-            </a>
-          </div>
-        </div>
-        <div class="w-full lg:w-6/12 py-4 px-4">
-          <div class="flex flex-wrap items-top mb-6">
-            <div class="w-full lg:w-4/12 px-4 ml-auto">
-              <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Useful Links</span>
-              <ul class="list-unstyled">
-                <li>
-                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="#">About Us</a>
-                </li>
-                <li>
-                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://blog.creative-tim.com">Blog</a>
-                </li>
-                <li>
-                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://www.github.com/creativetimofficial">Github</a>
-                </li>
-                <li>
-                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://www.creative-tim.com/bootstrap-themes/free">Free Products</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <hr class="my-6 border-gray-400" />
-      <div class="flex flex-wrap items-center md:justify-between justify-center">
+  <footer class="bg-gray-300 pt-4 pb-6  mb-0">
+      <div class="flex flex-wrap items-center mx-10 md:justify-between justify-center">
         <div class="text-sm text-gray-600 font-semibold py-1">
           Copyright © 2024 JSN Williams Development Initiative. All rights reserved.
         </div>
-        <div class="text-sm text-gray-600 font-semibold py-1">
+        <div class="text-sm text-gray-600 font-semibold">
           Developed by
           <a href="#" class="text-gray-600 hover:text-gray-900">Code Box Limited </a>.
         </div>
       </div>
-    </div>
   </footer>
 </section>
 

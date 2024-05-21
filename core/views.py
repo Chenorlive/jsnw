@@ -1,15 +1,16 @@
+from typing import Any
 from django.http import FileResponse
 from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
 from core.models import ( 
     Member, Blog, Report, Question, BlogCategory, Media,
-    MediaCategory
+    MediaCategory, DistrictE, Town, DistrictA
 )
 from django.views import generic
 from datetime import datetime, timedelta
 from .forms import (
-    QuestionForm, BlogForm, ReportForm, MediaForm
+    QuestionForm, BlogForm, ReportForm, MediaForm,
 )
 
 
@@ -19,12 +20,18 @@ from .forms import (
 def index(request):
 
     blog = Blog.objects.all().order_by('created_at')[:4]
+    district_E = DistrictE.objects.all()
+    district_A = DistrictA.objects.all()
+    town = Town.objects.all()
 
-    context = {'blog': blog}
+    context = {'blog': blog, 'district': district_E, 'town': town}
     return render(request=request, template_name="pages/index.html", context=context)
 
 
 def about(request):
+    return render(request=request, template_name="pages/about1.html")
+
+def donate(request):
 
     return render(request=request, template_name="pages/about1.html")
 
@@ -36,10 +43,30 @@ def contact(request):
     return render(request=request, template_name="pages/contact.html")
 
 
-def gallery(request):
-    media_category = MediaCategory.objects.all()
-    media = Media.objects.all()
-    return render(request=request, template_name="pages/gallery.html")
+def initiative(request, pk):
+    context = {'obb' : pk}
+    return render(request=request, template_name="pages/initiative.html",
+                  context=context)
+
+
+
+class GalleryListView(generic.ListView):
+    model = Media
+    paginate_by = 30
+    context_object_name = 'objects'
+    extra_context = {'year': datetime.now().year, 'title': 'Gallery', 'list': [1,2,3,4,5]}
+    template_name = 'pages/gallery.html'
+
+    def get_queryset(self):
+        category = self.kwargs['category']
+        obj = Media.objects.filter(category__pk=category).order_by('created_at')
+       
+        return obj
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['obb'] = self.kwargs['category']
+        return context
 
 
 class BlogListView(generic.ListView):
@@ -47,7 +74,7 @@ class BlogListView(generic.ListView):
     model = Blog
     paginate_by = 30
     context_object_name = 'object'
-    extra_context = {'year': datetime.now().year, 'title': 'Home', 'list': [1,2,3,4,5]}
+    extra_context = {'year': datetime.now().year, 'title': 'News', 'list': [1,2,3,4,5]}
     template_name = 'pages/blogs.html'
 
 
@@ -56,8 +83,10 @@ class QuestionListView(generic.ListView):
     model = Question
     paginate_by = 30
     context_object_name = 'object'
-    extra_context = {'year': datetime.now().year, 'title': 'Home', 'list': [1,2,3,4,5]}
+    extra_context = {'year': datetime.now().year, 'title': 'Question', 'list': [1,2,3,4,5]}
     template_name = 'pages/questions.html'
+
+    
 
 
 class FAQListView(generic.ListView):
@@ -65,20 +94,31 @@ class FAQListView(generic.ListView):
     model = Question
     paginate_by = 30
     context_object_name = 'object'
-    extra_context = {'year': datetime.now().year, 'title': 'Home', 'list': [1,2,3,4,5]}
+    extra_context = {'year': datetime.now().year, 'title': 'FAQ', 'list': [1,2,3,4,5]}
     template_name = 'pages/faq.html'
 
 
 
 #ReportListView
 class ReportListView(generic.ListView):
-    queryset = Report.objects.all()
     model = Report
     paginate_by = 30
     context_object_name = 'objects'
-    extra_context = {'year': datetime.now().year, 'title': 'Home', 'list': [1,2,3,4,5]}
+    extra_context = {'year': datetime.now().year, 'title': 'Report', 'list': [1,2,3,4,5]}
     template_name = 'pages/reports.html'
 
+    def get_queryset(self):
+        category = self.kwargs['category']
+        obj = Report.objects.filter(category__pk=category).order_by('created_at')
+       
+        return obj
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['obb'] = self.kwargs['category']
+        return context
+    
+  
 
 def createMember(request):
     if request.method == 'POST':
@@ -111,14 +151,18 @@ def createQuestion(request):
         name = request.POST['name']
         number = request.POST['number']
         question = request.POST['question']
+        gender = request.POST['gender']
         
         object = Question(
-            question = question
+            question = question,
+            gender=gender
         )
         if name:
             object.name = name
         if number:
             object.number = number
+
+        
             
         object.clean()
         object.save()
@@ -227,9 +271,16 @@ class ReportCreateView(generic.CreateView):
 
 class ReportUpdateView(generic.UpdateView):
     model = Report
-    template_name = 'admin/report/report_create.html'
+    template_name = 'admin/report/report_update.html'
     form_class = ReportForm
     success_url = '/admin/report/'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['obb'] = Report.objects.get(pk=self.kwargs['pk']) 
+        return context
+
+
 
 class ReportDeleteView(generic.DeleteView):
     model = Report

@@ -5,25 +5,53 @@
 
 <div class="mt-44 md:mt-24 mb-6">
     <div class="container  mx-auto px-4 lg:max-w-5xl">
-        <h2 class="mb-8 mt-6 text-4xl tracking-tight font-extrabold text-pr2">Gallery</h2>
+        {% if obb == '1' %}
+            <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-pr2">Images</h2>
+        {% elif obb == '2' %}
+            <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-pr2">Videos</h2>
+        {% elif obb == '3' %}
+            <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-pr2">Audios</h2>
+        {% endif %}
 
-        {% for category in media_category %}
-
-            <h2 class="m-2 text-2xl text-center tracking-tight font-extrabold text-pr2">{{ category.name }}</h2>
+        
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {% for obj in media %}
-                    {% if obj.category.pk == category.pk %}
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+                {% for obj in objects %}
+                    {% if obj.category.pk == 1 %}
+                        <div class="flex flex-col w-[200px]">
+                            <img class="h-auto w-[200px] rounded-lg" src="{{ obj.file.url }}" alt="">
+                            <h6 class="text-wrap text-center"> {{ obj.name }}</h6>
                         </div>
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg" src="{{ obj.file.url }}" alt="">
-                        </div>
+                    {% elif obj.category.pk == 2 %}
+                    <div class="flex flex-col w-[200px]">
+                        <video src="{{ obj.file.url }}" controls>
+                            <p>
+                              Your browser doesn't support HTML video. Here is a
+                              <a href="{{ obj.file.url }}">link to the video</a> instead.
+                            </p>
+                          </video>
+                          <h6 class="text-wrap text-center"> {{ obj.name }}</h6>
+                    </div>
+                    
+                        
+                    {% elif obj.category.pk == 3 %}
+                    <div class="flex flex-col w-[200px]">
+                        <audio controls>
+                            <source src="{{ obj.file.url }}" type="audio/mp3" />
+                            <source src="{{ obj.file.url }}" type="audio/ogg" />
+                            <p>
+                              Your browser doesn't support this audio file. Here is a
+                              <a href="{{ obj.file.url }}">link to the audio</a> instead.
+                            </p>
+                          </audio>
+                          <h6 class="text-wrap text-center"> {{ obj.name }}</h6>
+                    </div>
+                    
                     {% endif %}
+
                 {% endfor %}
             </div>
 
-        {% endfor %}
+       
     </div>
 </div>
 {% endblock %}
