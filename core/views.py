@@ -5,12 +5,13 @@ from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
 from core.models import ( 
     Member, Blog, Report, Question, BlogCategory, Media,
-    MediaCategory, DistrictE, Town, DistrictA
+    MediaCategory, DistrictE, Town, DistrictA, Initiative
 )
 from django.views import generic
 from datetime import datetime, timedelta
 from .forms import (
     QuestionForm, BlogForm, ReportForm, MediaForm,
+    InitiativeForm
 )
 
 
@@ -18,26 +19,33 @@ from .forms import (
 
 
 def index(request):
-
+    
     blog = Blog.objects.all().order_by('created_at')[:4]
     district_E = DistrictE.objects.all()
     district_A = DistrictA.objects.all()
     town = Town.objects.all()
 
-    context = {'blog': blog, 'district': district_E, 'town': town}
+    context = {'blog': blog, 'district_E': district_E,
+               'town': town, 'district_A': district_A,}
     return render(request=request, template_name="pages/index.html", context=context)
 
 
 def about(request):
-    return render(request=request, template_name="pages/about1.html")
+    context = {'path': 'about'}
+    return render(request=request, template_name="pages/about1.html", context=context)
 
 def donate(request):
-
-    return render(request=request, template_name="pages/about1.html")
+    context = {'path': 'about'}
+    return render(request=request, template_name="pages/about1.html", context=context)
 
 
 def aboutDistrict(request):
-    return render(request=request, template_name="pages/about.html")
+    context = {'path': 'about'}
+    return render(
+        request=request, 
+        template_name="pages/about.html",
+        context=context
+    )
 
 def contact(request):
     return render(request=request, template_name="pages/contact.html")
@@ -319,6 +327,46 @@ class MediaDeleteView(generic.DeleteView):
     model = Media
     template_name = 'admin/media/media_create.html'
     success_url = '/admin/media/'
+
+
+# Initiative
+
+class InitiativeListView(generic.ListView):
+    queryset = Initiative.objects.all()
+    model = Initiative
+    paginate_by = 30
+    context_object_name = 'objects'
+    extra_context = {'year': datetime.now().year, 'title': 'Initiative', 'list': [1,2,3,4,5]}
+    template_name = 'admin/initiative/initiative_list.html'
+
+class InitiativeDetailView(generic.DetailView):
+    model = Initiative
+    template_name = 'admin/initiative/initiative_list.html'
+
+
+class InitiativeCreateView(generic.CreateView):
+    model = Initiative
+    template_name = 'admin/initiative/initiative_create.html'
+    form_class = InitiativeForm
+    success_url = '/admin/initiative/'
+
+class InitiativeUpdateView(generic.UpdateView):
+    model = Initiative
+    template_name = 'admin/initiative/initiative_update.html'
+    form_class = ReportForm
+    success_url = '/admin/initiative/'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['obb'] = Initiative.objects.get(pk=self.kwargs['pk']) 
+        return context
+
+
+class InitiativeDeleteView(generic.DeleteView):
+    model = Initiative
+    template_name = 'admin/initiative/initiative_create.html'
+    success_url = '/admin/initiative/'
+
 
 
 

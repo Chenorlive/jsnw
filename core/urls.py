@@ -9,7 +9,8 @@ from .views import (
     ReportListView_, ReportCreateView, ReportDetailView, ReportUpdateView,
     MediaListView_, MediaCreateView, MediaDetailView, MediaUpdateView,
     MediaDeleteView, BlogDeleteView, QuestionDeleteView, ReportDeleteView,
-    downloadReport, initiative
+    downloadReport, initiative, InitiativeCreateView, InitiativeDetailView,
+    InitiativeDeleteView, InitiativeListView, InitiativeUpdateView 
 )
 
 
@@ -59,6 +60,12 @@ urlpatterns = [
     path('admin/media/new/', MediaCreateView.as_view(), name='ad_new_media'),
     path('admin/media/update/<int:pk>/', MediaUpdateView.as_view(), name='ad_update_media'),
     path('admin/media/delete/<int:pk>/', MediaDeleteView.as_view(), name='ad_delete_media'),
+
+    path('admin/initiative/', InitiativeListView.as_view(), name='ad_list_media'),
+    path('admin/initiative/<int:pk>/', MediaDetailView.as_view(), name='ad_detail_media'),
+    path('admin/initiative/new/', MediaCreateView.as_view(), name='ad_new_media'),
+    path('admin/initiative/update/<int:pk>/', MediaUpdateView.as_view(), name='ad_update_media'),
+    path('admin/initiative/delete/<int:pk>/', MediaDeleteView.as_view(), name='ad_delete_media'),
 
 
     path('download/report/<int:pk>/', downloadReport, name="download_report")

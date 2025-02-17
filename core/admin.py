@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import ( 
     BlogCategory, Blog, BlogFile, Question,
     Report, Member, MediaCategory, Media, ReportCategory,
-    Town, DistrictA, DistrictE
+    Town, DistrictA, DistrictE, Initiative
 )
 
 # Register your models here.
@@ -31,3 +31,5 @@ admin.site.register(DistrictE)
 admin.site.register(DistrictA)
 
 admin.site.register(Town)
+
+admin.site.register(Initiative)

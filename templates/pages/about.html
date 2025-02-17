@@ -2,17 +2,119 @@
 {% block content1 %}
 
 
-<div class="mt-44 md:mt-48 ">
-    <div class="container  mx-auto px-4 lg:max-w-5xl">
-            <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-pr2">About the District</h2>
-        
+<div class="mt-20 md:mt-28 mb-5 ">
+    <div class="container  mx-auto px-4 lg:max-w-5xl bg-white">
 
+        <h2 class="mt-2 text-4xl tracking-tight font-extrabold text-pr2">About the District</h2>
+
+        {% include "components/info_card4.html" with txt="River Gee County is one of the fifteen counties of Liberia. The county has three Electoral districts with ten administrative districts. <br/> This profile focuses on the electoral district three commonly known as the Webbo District. The district has a long political history. Formerly, its formed part of the political subdivision of both Maryland and Grand Gedeh counties before the creation of River Gee. <br>Webbo district has four administrative districts including the Glarro, Sarbo, Tuobo and Nyenebo district respectively. Nyenebo administrative district hosts the district seat which is Konowroken city. Glarro administrative district in river gee county is the co-host of the grebo -krahn national park. The park contains over 300 animal species,270 plant species and serves as important habitat for endangered and critically endangered and subspecies, most notably the western chimpanzee, Diana monkey, King colobus, Pygmy hippopotamus and giant pangolin. The area of the park is 237,591.55 acres [96,146.89 ha]. <br> The district lies east of River Gee and forms border with Ivory coast by the Cavalla River and to the south by Maryland county. the watershed has lower tropical forest, mid-size hills and various creeks and valleys <br> The forest received a very high rainfall ranging from 3000mm(120in) to 4,100mm(160in) per year in two distinct seasons. <br> It has an evergreen forest, while in the uplands it is conducive for rice production. The lowland areas are suitable for cocoa, roots and tubers, vegetables etc." h="District Profile" im="images/rg_pic.jpg" %}
+    
+        
+        <div class="flex flex-col mt-2 p-4">
+            <p class=" text-gray-700">Twelve out of the 17 sub grebo tribes of River Gee County are found in Electoral District #3.</p>
             
-        <div class="grid grid-cols-2 md:grid-cols-3  pb-48 gap-4">
-            <diV>
-                Content under development ....
-            </diV>
+            <p class="text-sm text-gray-700 mt-2 ">The twelve sub tribes are:</p>
+            <ul class="text-sm list-disc pl-4 space-y-2">
+                
+                <div class="flex flex-row space-x-10">
+                    <div>
+                        <li>Glarro</li>
+                        <li>Kiteabo</li>
+                        <li>Karyelibo</li>
+                        <li>Sarbo</li>
+                        <li>Nyentiabo</li>
+                        <li>Klibo</li>
+                    </div>
+                    <div>
+                        <li>Deabo</li>
+                        <li>Tuobo</li>
+                        <li>Gyetue</li>
+                        <li>Kaibo</li>
+                        <li>Webbo</li>
+                        <li>Nyenebo</li>
+                    </div>
+
+                </div>
+               
+                
+            </ul>
         </div>
+
+        <div class="p-4">
+            <h2 class="font-poppins font-bold text-top-color">EDUCATION</h2>
+            <p class=" text-gray-700">Electoral District #3 has a population of 30,074 residents as of 2022 national population census.</p>
+        </div>
+         
+
+        {% include "components/carousel_chart1.html" %}
+
+        <div class="p-4">
+            <h2 class="font-poppins font-bold text-top-color">EDUCATION</h2>
+            <p>
+                Electoral District #3 has two educational districts, Sarbo school and Webbo school districts. Sarbo school district has two Junior high schools. Chea cheapoo Jr high school and Tom Wah Jr High school and seven elementary schools making a total of 9 schools in the district.
+                Webbo school district has a total number of 22 schools both ECE, PRIMARY, JUNIOR HIGH and a senior high school.
+                The district is a host of one of the three RTTI (rural teacher training institutes) of Liberia, Webbo rural teacher training institute and is greatly impacting our district.
+
+            </p>
+        </div>
+
+        {% include "components/table1.html" %}
+
+        <div class="p-4">
+            <h2 class="font-poppins font-bold text-top-color">HEALTH</h2>
+            <p>
+                The district has two health districts Sarbo and Webbo, Sarbo has one Health center with three clinics. Webbo health district has four clinics. The district is a host of three officials’ borders entries and seven unofficial entries making the district very porous along the cavalla river which forms the boundary with the Ivory coast.
+                The livelihood of the people is predominantly agriculture particularly cocoa as cash crops. The district has huge potential of agriculture productivity in the near future.
+            </p>
+        </div>
+
+        {% include "components/table2.html" %}
+
+        <div class="p-4">
+            <h2 class="font-poppins font-bold text-top-color">Agriculture</h2>
+            <p>
+                The agriculture activities in District is characterized by rubber, oil palm, cocoa, rice, cassava and other mixed cropping activities, such as vegetables, roots and tubers, livestocks,  animals rearing, fishing, corn, etc. However, farmers are unable to recover their investment due to little or no extention services, inadequate  and inappropriate tools, equippment and technologies, lack of access to finance, lack of access to market, deplorable and/or lack of access to farms-to-market roads. 
+                All of these farming activities are carried out by individual household farmers. Hence organizing these farmers into category such as smallholder farmer groups (i.e. cooperatives, unions, companies, etc.) will increase food production, improve knowledge sharing, maximize the use of scared resources, reduce cost of investment and boost economic activities.
+
+            </p>
+        </div>
+
+        <div class="p-4">
+            <h2 class="font-poppins font-bold text-top-color">Information, Communication & Information (ICT)</h2>
+            <p>
+                There are about 78 towns with only seven (7) of the 78 town have access to telecommunications but with a very poor ICT penetration. The statistics show that only 8.9% of the 78 towns have access to ICT.
+                There are three (3) orange towels, and one Lonestar towel with two radio stations.
+            </p>
+        </div>
+    
+
+        <div class="flex flex-col mt-2 p-4">
+            <h2 class="font-poppins font-bold text-top-color">Security </h2>
+            <p class=" text-gray-700">The District has two (2) Police stations (River Gbeh and Webbo Konowroken) with two major security check points in Gbeh and Konowroken.
+                Electoral district in River Gee county connects Liberia to the Ivory Coast, here are places where the county has major Borders or recognized crossing points, two Borders (Nyaaken and Geeplaken) have Joint-security Command</p>
+            
+            <ul class="text-sm list-disc pl-4 space-y-1">
+                <li>Nyaaken Border</li>
+                <li>Gyetue Parkaken</li>
+            </ul>
+        </div>
+
+        <div class="flex flex-col mt-2 p-4">
+            <h2 class="font-poppins font-bold text-top-color">Road </h2>
+            <p class=" text-gray-700">All the feeder roads in the district are deplorable except the main street leading through the district to Maryland also known as Fish Harper highway
+                Main feeder roads include;
+                </p>
+            
+            <ul class="text-sm list-disc pl-4 space-y-1">
+                <li>Webbo - Nyenebo</li>
+                <li>Gbeh junction to Glarro</li>
+                <li>Tuobo Gbaweleken – Deabo</li>
+            </ul>
+        </div>
+
+    
+
+        
 
        
     </div>

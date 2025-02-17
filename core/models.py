@@ -25,6 +25,32 @@ FileType = [
     ("Audio", "Audio"),
 ]
 
+InitiativeStatue = [
+    ("Pending", "Pending"),
+    ("Ongoing", "Ongoing"),
+    ("Completed", "Completed"),
+]
+
+InitiativeType = [
+    ("Community", "Community"),
+    ("Women", "Women"),
+    ("Youth", "Youth"),
+]
+
+class Initiative(BaseModel):
+    name = models.CharField(max_length=255)
+    description = models.TextField(blank=True, null=True)
+    beneficiary = models.TextField(blank=True, null=True)
+    statue = models.CharField(max_length=100, choices=InitiativeStatue)
+    type = models.CharField(max_length=100, choices=InitiativeType)
+    lrd = models.DecimalField(decimal_places=2, max_digits=9)
+    usd = models.DecimalField(decimal_places=2, max_digits=9)
+
+
+    def __str__(self):
+        return self.name
+    
+    
 
 class BlogCategory(BaseModel):
     name = models.CharField(max_length=255)

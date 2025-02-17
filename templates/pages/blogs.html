@@ -3,9 +3,9 @@
 
 
 <div class="mt-24 md:mt-14">
-    <div class="container  mx-auto px-4 lg:max-w-5xl">
+    <div class="  mx-auto px-4 lg:max-w-5xl">
         <div class="items-center flex flex-wrap justify-center {{ fl }}">
-            <div class="w-full md:w-7/12 mx-auto mt-6 mb-8">
+            <div class="w-full md:w-8/12 mx-auto mt-6 mb-8">
                 <h2 class=" text-center mb-8 text-4xl tracking-tight font-extrabold text-pr2">Recent News</h2>
                 {% for i in object %}
                     {% if i.image %}
@@ -19,7 +19,7 @@
                 {% include "components/pagination.html" %}
 
             </div>
-            <div class="w-full md:w-5/12 px-4 mx-auto justify-items-center self-center md:self-start mt-20">
+            <div class="w-full md:w-4/12 px-4 mx-auto justify-items-center self-center md:self-start mt-20">
                 {% include "components/fb_feed.html" %}
             </div>
         </div>

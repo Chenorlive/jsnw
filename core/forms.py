@@ -1,6 +1,6 @@
 from django.forms import ModelForm, forms
 from .models import (
-    Question, Blog, Report, Media,
+    Question, Blog, Report, Media, Initiative
 )
 
 
@@ -49,3 +49,16 @@ class MediaForm(ModelForm):
         super().__init__(*args, **kwargs)
         for field in self.fields.values():
             field.widget.attrs['class'] = 'border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full'
+
+
+class InitiativeForm(ModelForm):
+    class Meta:
+        model = Blog
+        fields = ['title', 'content', 'image', 'category',]
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs['class'] = 'border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full'
+
+

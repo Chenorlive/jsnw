@@ -3,6 +3,7 @@
 
 
 
+
   {% include "components/hero.html" with h1="Office of the Representative <br> Electoral District 3, River Gee County" h2="Join us in sharping a brighter future for all. Together, we can build a stonger, more inclusive society" %}
 
 
@@ -17,7 +18,6 @@
           <div class="flex flex-wrap justify-center text-center mt-10 mb-14">
             <div class="w-full lg:w-6/12 px-4">
               <h2 class="text-4xl font-semibold text-black">Our Latest News</h2>
-              
             </div>
           </div>
           
@@ -117,8 +117,12 @@
     {% include "components/utilities/divider.html" with div_c="text-white" div_hs="130px" div_m="85px" div_h="155px" %}
        
       <div class="flex flex-wrap flex-row-reverse md:flex-row">
-        <div class="w-full md:w-6/12 lg:w-5/12 px-4  z-30 ">
-          {% include "components/utilities/number_countup.html" with n1="124" t1="Populations" n2="12" t2="Distinct Group" n3="4609" t3="Major crop" %}
+        <div class="w-full mt-6 py-6 md:w-6/12 lg:w-5/12 px-4 z-30 ">
+          
+          <div class="flex justify-center items-center">
+            {% include "components/carousel_chart2.html" %}
+          </div>
+          
         </div>
           <div class="w-full md:w-6/12 lg:w-7/12 px-4  z-30 ">
               <div
@@ -201,7 +205,7 @@
                           for="email"
                           >Town or Village</label
                           >
-                          <select type="text" name="town" class="border-0 p-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" required>
+                          <select type="text" id="town" name="town" class="border-0 p-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full" required>
                             <option value>  -- Select --  </option>
                             {% for obj in town %}
                                 <option value="{{obj.id}}">{{ obj.name}} </option>
@@ -293,7 +297,7 @@
     </div>
     <div class="container mx-auto px-4">
       <div class="flex flex-wrap">
-        <div class="w-full lg:w-6/12 px-4  ">
+        <div class="w-full lg:w-4/12 px-4  ">
           <h4 class="text-3xl font-semibold">Contact Us</h4>
         
           <div class="flex items-start p-2 mb-2 text-base  ">
@@ -343,7 +347,27 @@
         </div>
           
         </div>
-        <div class="w-full lg:w-6/12 py-4 px-4">
+        <div class="w-full lg:w-4/12 py-4 px-4">
+          <div class="flex flex-wrap items-top mb-6">
+            <div class="w-full lg:w-4/12 px-4 ml-auto">
+              <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Useful Links</span>
+              <ul class="list-unstyled">
+                <li>
+                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="{% url 'about' %}">About Us</a>
+                </li>
+                <li>
+                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                    href="https://wa.me/qr/RTC7RVK7MLTIL1 ">WhatApps</a>
+                </li>
+                <li>
+                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                    href="#">Facebook</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="w-full lg:w-4/12 py-4 px-4">
           <div class="flex flex-wrap items-top mb-6">
             <div class="w-full lg:w-4/12 px-4 ml-auto">
               <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Useful Links</span>
@@ -371,6 +395,15 @@
     </div>
   </div>
 
+</div>
+
+<script>
+  var town = document.getElementById('town')
+  var de = document.getElementById('town')
+  var da = document.getElementById('town')
+  
+  
+</script>
 
 
 {% endblock %}

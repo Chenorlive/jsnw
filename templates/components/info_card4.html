@@ -1,0 +1,30 @@
+{% load static %}
+
+<div  class=" pt-8 pb-10 lg:pt-20  bg-white" data-block-type="textWithMedia">
+    <div class="box-content mx-auto max-w-screen-xl px-6">
+        <div class="space-y-10 lg:grid lg:grid-cols-12 lg:grid-flow-col-dense lg:gap-5 lg:space-y-0">
+            <div class="flex lg:col-span-6">
+                <div class="flex flex-col justify-between mx-auto lg:mx-0 max-w-[610px]">
+                    <h2 class="text-4xl font-semibold"><span style="color: rgb(21 128 61)">{{ h }}</span></h2>
+                    <div>
+                        <div class="prose text-sm"> <br>                            
+                            <p>{{ txt }}</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center lg:col-span-4 lg:col-start-8 lg:-ms-11 py-2">
+                <div class="mx-auto delay-150 lg:mx-0 lg:max-w-none max-w-[610px]"
+                    :class="{'intersected': shown}">
+                    <figure>
+                        <img class="rounded-3xl"
+                            src="{% static 'images/rg_pic.jpg' %}"
+                            
+                            width="1348" height="758" alt sizes="100vw" loading="lazy">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
